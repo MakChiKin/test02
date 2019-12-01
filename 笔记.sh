@@ -1,3 +1,33 @@
+# 登出Vagrant
+# 安装插件
+vagrant plugin install vagrant-scp
+
+# 把本地文件复制到Vagrant中
+vagrant scp /Users/makchikin/Documents/docker-k8s-devops-master/chapter5/labs docker-node1:/home/vagrant/
+
+
+
+
+# 水平扩展
+docker service scale demo=5
+# 发现此时 service 下的容器列表总数有5个
+docker service ps demo
+
+# 打开另外一个窗口登录 swarm-worker1/swarm-worker2
+# 查看运行的容器
+docker ps
+# 在 swarm-worker2 下尝试强制删除某个容器
+docker rm -f we62ne7a2adf
+
+# 在swarm-manager节点上查看
+docker service ls
+# 发现就算关闭了某个，swarm会自动恢复节点而保持稳定
+
+# 删除 service 
+docker service rm demo
+
+
+
 
 # chapter7-4 在swarm 集群里通过 service 部署 WordPress
 # 登录 swarm-manager 节点机器
