@@ -60,7 +60,7 @@ docker service ls
 
 docker stack deploy
 
-
+docker service ls
 
 
 
