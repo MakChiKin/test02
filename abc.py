@@ -3,3 +3,4 @@ __author__ = 'MakChiKin'
 
 print('hello-world')
 print('hi,Max!')
+print('hahaha')
